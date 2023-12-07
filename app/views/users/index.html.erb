@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+
+ <%= month_calendar(events: @holidays) do |date , holidays| %>
+    <%= date.strftime("%d.%m.%Y") %>
+
+      <% holidays.each do |holiday| %>
+    <div>
+      <%= holiday.user %>
+    </div>
+  <% end %>
+
+<% end %>
+<html>
+<head>
+<style>
+
+ul  {
+  text-align: center;
+
+
+  list-style-type: none;
+  margin: auto;
+  padding: 8;
+  width: 50%;
+  height: 80px
+  background-color: #FFE4E1;
+  border: 5px solid #555
+
+}
+
+li {
+
+  text-align: center;
+  border-bottom:1px solid #555;
+
+}
+
+
+li:hover {
+
+  background-color: #F5DEB3;
+
+}
+
+
+
+
+
+
+</style>
+
+
+
+
+
+</head>
+<body>
+<ul>
+  <li class="new"> <%= link_to "neuer Benutzer", new_user_path %></li>   </br>
+   
+
+  
+    <table class="table table-hover">
+      <thead>
+
+        <tr>
+
+        
+
+          <th> Name </th>
+        
+        </tr>
+
+  
+      </thead>
+
+      <% @users.each do |user| %>
+      <tbody>
+         <tr>
+        <td><%= link_to user.name, user %> </td>
+        
+      </tr>
+
+      </tbody>
+
+    <%end%>
+
+   
+
+</ul>
+
+</body>
+</html>
+

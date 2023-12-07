@@ -1,0 +1,14 @@
+<h1>Editing user</h1>
+
+<%= render "form", user: @user %>
+
+<br>
+
+<div>
+
+  <button type="button" class="btn btn-outline-primary"><%= link_to "Diesen Benutzer anzeigen", @user %> 
+  </button>
+ 
+  <button type="button" class="btn btn-outline-success"><%= link_to "Zurück zu den Benutzern", users_path %></button>
+
+</div>

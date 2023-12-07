@@ -1,0 +1,63 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="display-1">Urlaub</h1>
+<%= render "error" %>
+
+ <%= form_for (@holiday) do |form| %>
+
+    <%= form.label :von %>
+    <%= form.date_field :from, class: 'form-control' %>
+
+    <%= form.label :bis %>
+    <%= form.date_field :to, class: 'form-control' %>
+       
+
+   <%= form.select :user_id, options_from_collection_for_select(@users,'id','to_s', @user.id)%>
+    <%= form.submit "speichern", class: "btn btn-primary" %>
+  <% end %>
+
+
+
+
+<ul>
+  
+    <% @holidays.each do |holiday| %>
+     <li class="users">
+       <%= holiday.from.strftime("%d.%m.%Y")  %> </br>
+       <%= holiday.to.strftime("%d.%m.%Y")  %> </br>
+       <button type="button" class="btn btn-warning"> <%= link_to "Bearbeiten Sie diesen Urlaub", edit_holiday_path(holiday) %></button>
+ 
+     <button type="button" class="btn btn-danger"><%= link_to "löschen diesen Urlaub", holiday_path(holiday), data: { turbo_method: :delete } %> 
+
+
+
+     </li>
+
+
+
+
+    <%end%>
+
+
+
+</ul>
+
+
+<div>
+  <button type="button" class="btn btn-outline-success"><%= link_to "Zurück zu den Benutzern", users_path %></button> </br>
+
+  <button type="button" class="btn btn-outline-warning"><%= link_to "Bearbeiten Name", edit_user_path %></button> </br>
+
+  <button type="button" class="btn btn-outline-danger"> <%= link_to "löschen Benutzer", user_path(@user), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Bist du sicher?"
+                  } %>
+  
+</button>
+
+ 
+  
+
+
+  
+</div>

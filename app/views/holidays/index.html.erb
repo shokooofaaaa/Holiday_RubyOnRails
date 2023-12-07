@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Urlaubs</h1>
+ 
+ <%= form_for (@holiday) do |form| %>
+
+    <%= form.label :von %>
+    <%= form.date_field :from, class: 'form-control' %>
+
+    <%= form.label :bis %>
+    <%= form.date_field :to, class: 'form-control' %>
+   <%= form.select :user_id, options_from_collection_for_select(@users, 'id', 'to_s') %>
+    <%= form.submit "speichern", class: "btn btn-primary" %>
+  <% end %>
+

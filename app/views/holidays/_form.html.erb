@@ -1,0 +1,17 @@
+<%= form_for (@holiday) do |form| %>
+
+
+  <div>
+    <%= form.label :von, style: "display: block" %>
+    <%= form.date_field :from %>
+  </div>
+
+  <div>
+    <%= form.label :bis, style: "display: block" %>
+    <%= form.date_field :to %>
+  </div>
+
+  <div>
+    <%= form.submit "Urlaub erstellen" %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<%= form_for (@holiday) do |form| %>
+  <% if @holiday.errors.any? %>
+    <div style="color: red">
+      <h2> Fehler verhinderten die Speicherung dieses Feiertags:</h2>
+
+      <ul>
+
+        
+        <li>  <%= @holiday.errors.full_message(:Datum, 'ist ungültig')  %> </li>
+
+      </ul>
+    </div>
+  <% end %>
+    <% end %>
+
