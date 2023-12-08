@@ -2,6 +2,7 @@ class HolidaysController < ApplicationController
   before_action  only: %i[ show edit update destroy ]
 
   # GET /holidays or /holidays.json
+  # comment test test
   def index
     @holidays = Holiday.all
      @holiday = Holiday.new
