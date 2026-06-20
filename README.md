@@ -1,24 +1,23 @@
-# README
+# Holiday Booking System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+A Ruby on Rails side project focused on implementing holiday reservation workflows and business logic.
 
-Things you may want to cover:
+## Features
+- Create and manage holiday reservations
+- Validation for booking-related input
+- MVC-based structure
+- Database persistence with ActiveRecord
 
-* Ruby version
+## Tech Stack
+- Ruby on Rails
+- SQLite / PostgreSQL
+- HTML/CSS/ERB
 
-* System dependencies
+## How to Run
+bundle install
+rails db:migrate
+rails server
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Project Goal
+This side project was built to strengthen backend development skills and explore business logic implementation in a different MVC framework.
